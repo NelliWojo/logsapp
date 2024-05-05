@@ -1,0 +1,21 @@
+{
+  "name": "logsapp",
+  "version": "1.0.0",
+  "description": "logsapp, ejs views, dockerfile, makefile, docker commands",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0"
+  }
+}
