@@ -1,0 +1,64 @@
+#### DOCKER commands
+
+docker image ls
+
+docker run <IMAGE ID>
+
+docker run -it node (it == interactive)
+
+.exit (to exit an image)
+
+docker ps -a
+
+docker rm <IMAGE ID> (remove container)
+
+docker rmi <IMAGE ID> (remove image)
+
+docker container prune (remove all containers)
+
+docker image prune
+
+docker image inspect <IMAGE ID> or <NAME>
+
+
+*****
+
+#### create Dockerfile
+
+docker build .  (to create an image)
+
+docker build -t <NAME> . (to create an image with name)
+
+docker build -t logsapp:example . (to create an image with name and version)
+
+docker run -d -p 3000:3000 --rm --name logsapp logsapp:example   (to run an image logsapp with tag example and remove it when stop)
+
+docker run -d -p 4200:3000 --rm --name logsapp raftouch/logsapp  (--> to run logsapp по образу raftouch/logsapp)
+
+docker run <IMAGE ID> (to create a container)
+
+docker stop <CONTAINER ID>
+
+docker start <CONTAINER ID> (if container already exists)
+
+docker run -p 80:3000 <IMAGE ID>  (first 3000 --> local port, second 3000 --> port in Docker)
+
+-p 80:3000: This option specifies port mapping, allowing you to expose ports from the container to the host. In this case, it maps port 3000 from the container to port 80 on the host. This means that any traffic directed to port 80 on the host will be forwarded to port 3000 inside the container.
+
+
+docker logs
+
+docker run -d -p 80:3000 --name <NAME> <IMAGE ID> (to give a name to an image)
+
+
+#### DOCKER HUB DEPLOY
+
+create an account
+
+docker login (in cmd)
+
+docker push raftouch/logsapp:latest
+
+!!! RENAME an image before pushing --> docker tag logsapp raftouch/logsapp
+
+--> docker push raftouch/logsapp:latest
